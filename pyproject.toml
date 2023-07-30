@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "fast-hot-reload"
+version = "0.1.5"
+description = "Add hot-reload to FastAPI at the client browser."
+authors = ["Zac <zac.boyles@live.com>"]
+readme = "README.md"
+packages = [
+    {include = "fast_hot_reload"},
+    {include = "fast_hot_reload/arel"},
+    {include = "fast_hot_reload/arel/data/client.js"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+watchgod = "^0.8.0"
+fastapi = "^0.96.0"
+websockets = "^10.4"
+
+[tool.poetry.group.dev.dependencies]
+uvicorn = {extras = ["standard"], version = "^0.23.1"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "uvicorn app:mounted.app"
