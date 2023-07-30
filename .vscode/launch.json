@@ -12,6 +12,11 @@
             "args": [
                 "app:app",
                 "--reload",
+                "--host",
+                "10.0.0.5",
+                "--port",
+                "8080",
+                "--use-colors",
             ],
             "jinja": true,
             "justMyCode": true
